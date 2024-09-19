@@ -1,5 +1,7 @@
 import argparse
-from utils import tensor_utils
+#import sys
+#sys.path.insert(0, "/home/kia/MOTION_ESTIMATION/SAME/src/utils")
+from utils import  tensor_utils
 import numpy as np
 import torch
 from mypath import *

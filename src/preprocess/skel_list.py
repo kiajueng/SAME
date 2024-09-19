@@ -76,6 +76,23 @@ alternative_map = {
     "RightToe": "RightToeBase",
     "LeftToe_End": "LeftToeBase_End",
     "RightToe_End": "RightToeBase_End",
+    "Shoulder_L": "LeftShoulder",
+    "UpperArm_L": "LeftArm",
+    "LowerArm_L": "LeftForeArm",
+    "Hand_L": "LeftHand",
+    "Shoulder_R": "RightShoulder",
+    "UpperArm_R": "RightArm",
+    "LowerArm_R": "RightForeArm",
+    "Hand_R": "RightHand",
+    "UpperLeg_L": "LeftUpLeg", 
+    "LowerLeg_L": "LeftLeg",
+    "Foot_L" : "LeftFoot",
+    "Toes_L" : "LeftToeBase",
+    "UpperLeg_R": "RightUpLeg", 
+    "LowerLeg_R": "RightLeg",
+    "Foot_R" : "RightFoot",
+    "Toes_R" : "RightToeBase",
+    "Chest":"Spine1",
 }
 
 ee_joints = [
@@ -90,7 +107,7 @@ ee_joints = [
 def write_skel_list(filename):
     in_filepath = os.path.join(in_char_path, filename)
     motion = bvh.load(in_filepath)
-
+    
     joint_names = [joint.name for joint in motion.skel.joints]
     print("#", len(joint_names), "\t", filename)
     missing_ee = False

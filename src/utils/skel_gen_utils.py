@@ -260,6 +260,7 @@ def createSkelProperty_fromStat(jointScaleStat, rnd_hierarchy=True):
 
 
 def parse_all_char(data_path):
+    print(data_path)
     filelist = list(filter(lambda x: x.endswith(".txt"), os.listdir(data_path)))
     char_list = []
     for filename in filelist:
@@ -516,12 +517,12 @@ def generateSkel(rnd_offset, parent_map, all_joint_list):
 
 from mypath import *
 
-char_skel_list = parse_all_char(
-    os.path.join(DATA_DIR, "test", "character", "joint_pos")
-)
-jointScaleStat = parse_scale_txt(
-    os.path.join(DATA_DIR, "test", "character", "default.txt")
-)
+#char_skel_list = parse_all_char(
+#    os.path.join(DATA_DIR, "test", "character", "joint_pos")
+#)
+#jointScaleStat = parse_scale_txt(
+#    os.path.join(DATA_DIR, "test", "character", "default.txt")
+#)
 
 
 def create_random_skel(mode="data", rnd_hierarchy=True):
