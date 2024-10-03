@@ -517,9 +517,9 @@ def generateSkel(rnd_offset, parent_map, all_joint_list):
 
 from mypath import *
 
-#char_skel_list = parse_all_char(
-#    os.path.join(DATA_DIR, "test", "character", "joint_pos")
-#)
+char_skel_list = parse_all_char(
+    os.path.join(DATA_DIR, "bandai-namco", "character", "joint_pos")
+)
 #jointScaleStat = parse_scale_txt(
 #    os.path.join(DATA_DIR, "test", "character", "default.txt")
 #)

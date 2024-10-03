@@ -99,6 +99,7 @@ def set_cfg_recursive(cfg, key_list, val):
 def load_model_cfg(load_model):
     model_dir = os.path.join(RESULT_DIR, load_model)
     config_path = os.path.join(model_dir, "config.yaml")
+    print("CONFIG PATH:", config_path)
     with open(config_path) as f:
         config = yaml.load(f, Loader=yaml.SafeLoader)
         update_yaml_None(config)

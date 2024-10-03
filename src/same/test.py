@@ -128,11 +128,12 @@ if __name__ == "__main__":
     parser.add_argument("--tgt_mask", type=int, default=1)
 
     args = parser.parse_args()
-
+    
     model, cfg, ms_dict = prepare_model_test(args.model_epoch, args.device)
 
     # Dataset
     ds = PairedDataset()
+    
     data_dir = os.path.join(DATA_DIR, args.data_dir)
     ds.load_data_dir_pairs(data_dir)
 
@@ -146,6 +147,7 @@ if __name__ == "__main__":
         (src_batch, tgt_batch), consq_n = get_mi_src_tgt_all_graph(
             dataset=ds, mi=mi, src_ri=src_ri, tgt_ri=tgt_ri, device=args.device
         )
+
         # option 1) test with data tgt skeleton
         # option 2) test with random skeleton
         if args.rnd_tgt:
@@ -170,7 +172,11 @@ if __name__ == "__main__":
             out_rep_cfg=cfg["representation"]["out"],
             consq_n=consq_n,
         )
-
+        
+        print(out_motion.positions()[100:105])
+        print(src_motion.positions()[0])
+        print(tgt_motion.positions()[0])
+		
         # update viewer
         viewer.update_motions([src_motion, tgt_motion, out_motion], 150, linear=True)
         viewer.mi = mi
