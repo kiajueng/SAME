@@ -172,10 +172,6 @@ if __name__ == "__main__":
             out_rep_cfg=cfg["representation"]["out"],
             consq_n=consq_n,
         )
-        
-        print(out_motion.positions()[100:105])
-        print(src_motion.positions()[0])
-        print(tgt_motion.positions()[0])
 		
         # update viewer
         viewer.update_motions([src_motion, tgt_motion, out_motion], 150, linear=True)
